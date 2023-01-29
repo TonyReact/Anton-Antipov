@@ -1,6 +1,7 @@
 ## Project
 
 An application used to count days for workers working on the same project at the same time. Built with React, JavaScript, Node and SCSS.
+You can check the website through the link: https://sirma.surge.sh
 
 ## Installation and Setup Instructions
 
