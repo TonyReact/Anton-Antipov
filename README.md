@@ -30,7 +30,7 @@ localhost:3000
 ## Reflection
 
 The project was completed in accordance with the terms of reference.
-The task was to write a UI application to read only skv files and process the data inside the file.
+The task was to write a UI application to read only CSV files and process the data inside the file.
 
 According to the assignment, I have to display on the screen only those values ​​that match in the 3rd column for #1 and #2 and count the number of days for prooject #3 participants under the numbers #1 and #2 worked together on the project.
 
