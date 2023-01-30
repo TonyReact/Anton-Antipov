@@ -69,10 +69,10 @@ const Homepage = () => {
   function showResult(formatedData) {
     const
      oneDay  = 24 * 60 * 60 * 1000 // hours*minutes*seconds*milliseconds
-     , setDate = YMD =>
+   , setDate = YMD =>
       {
-      let [Y,M,D] = YMD.split('-').map(Number)
-      return new Date(Y,--M,D)
+        let [Y,M,D] = YMD.split('-').map(Number)
+        return new Date(Y,--M,D)
       }
 
     // group Employees by project id , change date string to JS newDate
@@ -127,10 +127,10 @@ const Homepage = () => {
 
 	return (
 		<>
-			<section>
-				<div id="scroll-container">
-					<div id="scroll-text">Click on the Select button and check the result. Have fun!</div>
-				</div>
+		  <section>
+		  	<div id="scroll-container">
+				<div id="scroll-text">Click on the Select button and check the result. Have fun!</div>
+			</div>
 				<main>
 					<div className="area" >
 						<ul className="circles">
