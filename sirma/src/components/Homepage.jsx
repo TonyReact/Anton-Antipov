@@ -189,8 +189,8 @@ const Homepage = () => {
   	     </div>
 	   </main>
  	 </section>
-       </>
-	);
+      </>
+      );
 };
 
 export default Homepage;
