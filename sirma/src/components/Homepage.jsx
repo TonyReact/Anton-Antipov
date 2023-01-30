@@ -77,7 +77,6 @@ const Homepage = () => {
       }
 
     // group Employees by project id , change date string to JS newDate
-
     const Proj_Emps = formatedData.reduce( (r,[EmployeeID, ProjectID, StartDate, EndDate])=>
       {
         let startDay = setDate(StartDate)
@@ -87,8 +86,7 @@ const Homepage = () => {
         return r
       }, {})
 
-    // combination of pairs of employees per project 
-
+    // combination of pairs of employees per project
     let combination = {}
     for (let proj in Proj_Emps) 
     for (let i = 0; i < Proj_Emps[proj].length - 1; i++) 
@@ -126,73 +124,72 @@ const Homepage = () => {
      setProjdays(details)
   };
 
-	return (
-		<>
-		  <section>
-		  	<div id="scroll-container">
-				<div id="scroll-text">Click on the Select button and check the result. Have fun!</div>
-			</div>
-				<main>
-					<div className="area" >
-						<ul className="circles">
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div >
-					<div className="form-box">
-						<div className="file-input">
-							<input onChange={handleFileChange}
-										id="csvInput"
-										name="file"
-										type="File"
-										accept=".csv"
-										className="file" />
-							<label htmlFor="csvInput">
-								Select file
-								<p className="file-name"></p>
-							</label>
-						</div>
-						<div className="text-box">
-							<button className="btn" onClick={handleParse}>Parse</button>
-						</div>
-					</div>
-					<div className="container">
-						<div className="title-container">
-								<ul>
-									<li>Employee ID #1</li>
-									<li>Employee ID #2</li>
-									<li>Project ID & Days worked</li>
-								</ul>
-							</div>
-						<div className="wrapper">
-							<div className="box__item">
-								{error ? error : firstemp.map((item,
-								index) => <div className="item" key={index}>{item}</div>)	
-								}
-							</div>
-							<div className="box__item">
-								{error ? error : secondemp.map((item,
-								index) => <div className="item" key={index}>{item}</div>)
-								}
-							</div>
-							<div className="box__item">
-								{error ? error : projdays.map((item,
-								index) => <div className="item" key={index}>{item}</div>)
-								}
-							</div>
-						</div>
-					</div>
-				</main>
-			</section>
-		</>
+  return (
+	 <>
+	   <section>
+	     <div id="scroll-container">
+	       <div id="scroll-text">Click on the Select button and check the result. Have fun!</div>
+	     </div>
+	     <main>
+	       <div className="area" >
+	         <ul className="circles">
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		   <li></li>
+		 </ul>
+ 	       </div >
+	       <div className="form-box">
+	         <div className="file-input">
+		   <input onChange={handleFileChange}
+				id="csvInput"
+				name="file"
+				type="File"
+				accept=".csv"
+				className="file" />
+		   <label htmlFor="csvInput">
+		     Select file
+		   </label>
+		 </div>
+		 <div className="text-box">
+		   <button className="btn" onClick={handleParse}>Parse</button>
+		 </div>
+	       </div>
+	       <div className="container">
+	         <div className="title-container">
+		   <ul>
+		     <li>Employee ID #1</li>
+		     <li>Employee ID #2</li>
+		     <li>Project ID & Days worked</li>
+		   </ul>
+		 </div>
+		 <div className="wrapper">
+		   <div className="box__item">
+		   {error ? error : firstemp.map((item,
+		   index) => <div className="item" key={index}>{item}</div>)	
+		   }
+		 </div>
+		 <div className="box__item">
+		   {error ? error : secondemp.map((item,
+		   index) => <div className="item" key={index}>{item}</div>)
+		   }
+		 </div>
+		 <div className="box__item">
+		   {error ? error : projdays.map((item,
+		   index) => <div className="item" key={index}>{item}</div>)
+		   }
+		 </div>
+	       </div>
+  	     </div>
+	   </main>
+ 	 </section>
+       </>
 	);
 };
 
