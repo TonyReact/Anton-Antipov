@@ -102,9 +102,9 @@ const Homepage = () => {
             firstDate    = employeeA.startDay > employeeB.startDay ? employeeA.startDay : employeeB.startDay
           , secondDate   = employeeA.endDay < employeeB.endDay ? employeeA.endDay : employeeB.endDay
           , days = Math.ceil((secondDate - firstDate) / oneDay)
-          , key  = `${employeeA.EmployeeID}-${employeeB.EmployeeID}`
-            ;
-          combination[key] = combination[key] ?? { employeeA: employeeA.EmployeeID, employeeB: employeeB.EmployeeID, sum:0, details:[] }
+          , key  = `${employeeA.EmployeeID}-${employeeB.EmployeeID}`;
+		
+         combination[key] = combination[key] ?? { employeeA: employeeA.EmployeeID, employeeB: employeeB.EmployeeID, sum:0, details:[] }
          combination[key].details.push({proj: Number(proj), days })
          combination[key].sum += days
         }
