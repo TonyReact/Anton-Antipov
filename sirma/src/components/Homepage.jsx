@@ -45,6 +45,7 @@ const Homepage = () => {
       setFile(inputFile);
     }
   };
+	
   const handleParse = () => {
 		
     // If user clicks the parse button without
@@ -97,10 +98,10 @@ const Homepage = () => {
         let employeeB = Proj_Emps[proj][j]
 
         if (( employeeA.endDay <= employeeB.endDay && employeeA.endDay > employeeB.startDay )
-        ||( employeeB.endDay <= employeeA.endDay && employeeB.endDay > employeeA.startDay )
+          ||( employeeB.endDay <= employeeA.endDay && employeeB.endDay > employeeA.startDay )
         ){
           const 
-            firstDate   = employeeA.startDay > employeeB.startDay ? employeeA.startDay : employeeB.startDay
+            firstDate    = employeeA.startDay > employeeB.startDay ? employeeA.startDay : employeeB.startDay
           , secondDate   = employeeA.endDay < employeeB.endDay ? employeeA.endDay : employeeB.endDay
           , days = Math.ceil((secondDate - firstDate) / oneDay)
           , key  = `${employeeA.EmployeeID}-${employeeB.EmployeeID}`
@@ -118,7 +119,7 @@ const Homepage = () => {
 
      const employeeOne = result.map(el =>  Array.from(el.employeeA))
      const employeeTwo = result.map(el =>  Array.from(el.employeeB))
-     const details = result.map(el => Array.from(JSON.stringify(Object.values(el.details[0])).replaceAll('[','').replaceAll(']','').replaceAll(',','-')))
+     const details     = result.map(el =>  Array.from(JSON.stringify(Object.values(el.details[0])).replaceAll('[','').replaceAll(']','').replaceAll(',','-')))
   
      setFirstemp(employeeOne)
      setSecondemp(employeeTwo)
